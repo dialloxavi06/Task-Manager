@@ -1,0 +1,11 @@
+.box1 h2 {
+    float: left;
+}
+
+.box1 button {
+    float: right;
+}
+
+.container {
+    margin-top: 50px;
+}
