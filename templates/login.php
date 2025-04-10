@@ -29,17 +29,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php include 'header.php'; ?>
 
 <div class="container">
-    <h2>Connexion</h2>
+    <h2 class="text-center mb-4">Connexion</h2>
+
     <?php if ($error) : ?>
         <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
-    <form method="post" action="">
-        <label>Nom d'utilisateur :</label>
-        <input type="text" name="username" required>
-        <label>Mot de passe :</label>
-        <input type="password" name="password" required>
-        <button type="submit">Se connecter</button>
+
+    <form method="post" action="" class="mx-auto" style="max-width: 400px;">
+        <div class="mb-3">
+            <label for="username" class="form-label">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Mot de passe :</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <p><a href="register.php">Sign-in</a></p>
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+        </div>
     </form>
 </div>
+
 
 <?php include 'footer.php'; ?>
