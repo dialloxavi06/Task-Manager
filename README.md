@@ -5,7 +5,7 @@ Dieses Projekt ist ein einfacher Aufgaben-Manager, entwickelt in reinem PHP unte
 ## 🔧 Technologien
 
 - ✅ PHP (ohne Framework)
-- ✅ SQLite oder MySQL (je nach Konfiguration)
+- ✅ MySQL
 - ✅ Bootstrap (für das Frontend-Styling)
 - ✅ HTML5/CSS3
 - ✅ MVC-Architektur (einfach gehalten)
@@ -19,7 +19,20 @@ Dieses Projekt ist ein einfacher Aufgaben-Manager, entwickelt in reinem PHP unte
 
 ## 📁 Projektstruktur
 
-Task-Manager ├── config/ │ └── Database.php # Datenbankverbindung ├── Controller/ │ └── TaskController.php # Logik für Aufgabenverwaltung ├── Entity/ │ └── Task.php # Aufgabenmodell ├── Repository/ │ └── TaskRepository.php # Datenbankoperationen für Aufgaben ├── public/ │ ├── index.php # Einstiegspunkt der Anwendung │ ├── create.php # Formular zum Erstellen einer Aufgabe │ ├── edit.php # Formular zum Bearbeiten einer Aufgabe │ └── delete.php # Logik zum Löschen einer Aufgabe ├── templates/ │ ├── header.php # Gemeinsames Header-Template │ ├── footer.php # Gemeinsames Footer-Template │ └── task_form.php # Formular für Aufgaben (Erstellen/Bearbeiten) ├── README.md # Dokumentation des Projekts └── test.php # Testdatei für die Anwendun
+Task-Manager ├── config/ │ └── Database.php 
+### Datenbankverbindung ├── Controller/ │ └── TaskController.php 
+### Logik für Aufgabenverwaltung ├── Entity/ │ └── Task.php 
+### Aufgabenmodell ├── Repository/ │ └── TaskRepository.php 
+### Datenbankoperationen für Aufgaben ├── public/ │ ├── index.php 
+### Einstiegspunkt der Anwendung │ ├── create.php 
+### Formular zum Erstellen einer Aufgabe │ ├── edit.php 
+### Formular zum Bearbeiten einer Aufgabe │ └── delete.php 
+### Logik zum Löschen einer Aufgabe ├── templates/ │ ├── header.php 
+### Gemeinsames Header-Template │ ├── footer.php 
+### Gemeinsames Footer-Template │ └── task_form.php 
+### Formular für Aufgaben (Erstellen/Bearbeiten) ├── README.md 
+### Dokumentation des Projekts └── test/
+### Testdatei für die Anwendun
 
 2. **Datenbank konfigurieren**:
 

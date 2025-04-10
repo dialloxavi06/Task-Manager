@@ -6,6 +6,7 @@ class Task
         private ?int $id,
         private string $title,
         private string $description,
+        private int $user_id,
         private bool $isDone
     ) {}
 
@@ -21,11 +22,20 @@ class Task
     {
         return $this->description;
     }
+    public function getUserId(): int
+    {
+        return $this->user_id;
+    }
     public function isDone(): bool
     {
         return $this->isDone;
     }
 
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+        return $this;
+    }
     public function setTitle(string $title): self
     {
         $this->title = $title;
@@ -36,6 +46,11 @@ class Task
         $this->description = $description;
         return $this;
     }
+    public function setUserId(int $user_id): void
+    {
+        $this->user_id = $user_id;
+    }
+
     public function setIsDone(bool $isDone): self
     {
         $this->isDone = $isDone;
