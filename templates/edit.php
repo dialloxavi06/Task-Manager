@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../config/Database.php';
 require_once '../Entity/Task.php';
 require_once '../Repository/TaskRepository.php';
@@ -7,6 +9,7 @@ require_once '../Controller/TaskController.php';
 $db = Database::getConnection();
 $repository = new TaskRepository($db);
 $controller = new TaskController($repository);
+$userId = $_SESSION['user_id'];
 
 // Traitement du formulaire de modification
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -15,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $isdone = trim($_POST['is_done']);
     $description = trim($_POST['description']);
 
-    $controller->updateTask($id, $title, $description, $isdone);
+    $controller->updateTask($id, $title, $description, $isdone, $userId);
 
 
     header("Location: index.php");
@@ -28,7 +31,7 @@ if (!isset($_GET['id'])) {
 }
 
 $id = intval($_GET['id']);
-$task = $controller->getTaskById($id);
+$task = $controller->getTaskById($id, $userId);
 
 if (!$task) {
     die("Tâche introuvable.");

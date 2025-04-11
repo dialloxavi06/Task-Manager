@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../config/Database.php';
 require_once '../Entity/Task.php';
 require_once '../Repository/TaskRepository.php';
@@ -6,12 +8,13 @@ require_once '../Controller/TaskController.php';
 
 $db = Database::getConnection();
 $controller = new TaskController(new TaskRepository($db));
+$userId = $_SESSION['user_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'] ?? '';
     $description = $_POST['description'] ?? '';
     $isDone = isset($_POST['is_done']);
-    $controller->createTask($title, $description, $isDone);
+    $controller->createTask($title, $description, $isDone, $userId);
     header('Location: index.php');
     exit;
 }
